@@ -1,0 +1,53 @@
+.header{
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ 
+ .animated-typing {
+    font-size: 3em;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: cursor 1s infinite;
+    color: azure;
+}
+
+@keyframes cursor {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.card-img-top{
+    height: 300px;
+}
+
+
+
+
+.cake-items {
+    justify-content: space-between;
+  }
+  
+  .cake-item {
+    width: 30%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .cake-item img {
+    width: 100%;
+  }
+.carousel-inner{
+    height: 400px;
+}

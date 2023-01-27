@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <title>Cakeshop</title>
+    <link rel="stylesheet" href="/style.css">
+    <script>
+      $("#add-to-cart-button").click(function(){
+        var cakeName = $("#cake-name").val();
+        $("#cake-menu-bar ul").append("<li>" + cakeName + "</li>");
+    });
+    
+    </script>
+    <title></title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/index.html"><img src="/cake.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/cakes.html">Cakes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/About us.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search Cakes" aria-label="Search">
+          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </nav>
+    <div class="container">
+        <h1 class="text-center my-5">Cake Shop Cart</h1>
+        <div class="row">
+          <div class="col-12">
+            <table class="table table-striped">
+              <thead class="thead-dark">
+                <tr>
+                  <th>Cake</th>
+                  <th>Size (in pounds)</th>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Chocolate Cake</td>
+                  <td><div id="cake-menu-bar">
+                    <ul>
+                        <li id="cake-name-1"></li>
+                        <li id="cake-name-2"></li>
+                        <li id="cake-name-3"></li>
+                    </ul>
+                </div>
+                </td>
+                  <td>
+                    <input type="number" min="1" max="10" id="chocolateSize" onchange="updatePrice('chocolate')" class="form-control">
+                  </td>
+                  <td id="chocolatePrice">$20</td>
+                  <td>
+                    <button class="btn btn-danger" onclick="removeItem('chocolate')">Remove</button>
+                    <button class="btn btn-success" onclick="uploadDesign('chocolate')">Upload Design: <label for="upload-design-input">
+                    <input type="file" id="upload-design-input" accept="image/*"></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Vanilla Cake</td>
+                  <td><div id="cake-menu-bar">
+                    <ul>
+                        <li id="cake-name-1"></li>
+                        <li id="cake-name-2"></li>
+                        <li id="cake-name-3"></li>
+                    </ul>
+                </div>
+                </td>
+                  <td>
+                    <input type="number" min="1" max="10" id="vanillaSize" onchange="updatePrice('vanilla')" class="form-control">
+                  </td>
+                  <td id="vanillaPrice">$20</td>
+                  <td>
+                    <button class="btn btn-danger" onclick="removeItem('vanilla')">Remove</button>
+                    <button class="btn btn-success" onclick="uploadDesign('vanilla')"><label for="upload-design-input">Upload Design:</label>
+                        <input type="file" id="upload-design-input" accept="image/*"></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Strawberry Cake</td>
+                  <td><div id="cake-menu-bar">
+                    <ul>
+                        <li id="cake-name-1"></li>
+                        <li id="cake-name-2"></li>
+                        <li id="cake-name-3"></li>
+                    </ul>
+                </div>
+                </td>
+                  <td>
+                    <input type="number" min="1" max="10" id="strawberrySize" onchange="updatePrice('strawberry')" class="form-control">
+                  </td>
+                  <td id="strawberryPrice">$20</td>
+                  <td>
+                    <button class="btn btn-danger" onclick="removeItem('strawberry')">Remove</button>
+                    <button class="btn btn-success" onclick="uploadDesign('strawberry')"><label for="upload-design-input">Upload Design:</label>
+                        <input type="file" id="upload-design-input" accept="image/*"></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+       
+        <div class="row">
+            <div class="col-12 text-center">
+              <h3>Total Price: <span id="totalPrice">$60</span></h3>
+              <button  class="btn btn-primary btn-lg" onclick="checkout()"><a href="/payment gateway/checkout.html" style="color: azure;">Checkout: International</a></button>
+              <button  class="btn btn-primary btn-lg" ><a href="/payment gateway/payment.html" style="color: azure;">Checkout: Bangladesh</a></button>
+             
+
+            </div>
+          </div>
+
+          <br>
+          <footer class="bg-primary text-white py-3">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <p class="mb-0">Copyright © Nazmus Skaib Apurba</p>
+                  </div>
+                  <div class="col-md-4">
+                    <p class="mb-0">Address: 1234 Cake Street,Gazipur,Dhaka</p>
+                  </div>
+                  <div class="col-md-4">
+                    <a href="/contact.html" class="text-white float-right">Contact Us</a>
+                  </div>
+                </div>
+              </div>
+            </footer>
+      
+<script>
+
+
+
+    function updatePrice(cake) {
+        var size = document.getElementById(cake + "Size").value;
+        var price = document.getElementById(cake + "Price");
+        var total = document.getElementById("totalPrice");
+      
+        var newPrice = size * 5;
+        price.innerHTML = "$" + newPrice;
+      
+        // calculate total
+        var chocolatePrice = parseInt(document.getElementById("chocolatePrice").innerHTML.substring(1));
+        var vanillaPrice = parseInt(document.getElementById("vanillaPrice").innerHTML.substring(1));
+        var strawberryPrice = parseInt(document.getElementById("strawberryPrice").innerHTML  .substring(1));
+
+        var totalPrice = chocolatePrice + vanillaPrice + strawberryPrice;
+        total.innerHTML = "$" + totalPrice;
+      }
+      
+      function removeItem(cake) {
+        var size = document.getElementById(cake + "Size");
+        var price = document.getElementById(cake + "Price");
+        var total = document.getElementById("totalPrice");
+      
+        size.value = 0;
+        price.innerHTML = "$0";
+      
+        // calculate total
+        var chocolatePrice = parseInt(document.getElementById("chocolatePrice").innerHTML.substring(1));
+        var vanillaPrice = parseInt(document.getElementById("vanillaPrice").innerHTML.substring(1));
+        var strawberryPrice = parseInt(document.getElementById("strawberryPrice").innerHTML.substring(1));
+      
+        var totalPrice = chocolatePrice + vanillaPrice + strawberryPrice;
+        total.innerHTML = "$" + totalPrice;
+      }
+      
+      function uploadDesign(cake) {
+        alert("Upload design feature for " + cake + " cake");
+      }
+      
+      
+</script>      
+</body>
+</html>

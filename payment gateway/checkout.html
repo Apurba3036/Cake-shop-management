@@ -120,16 +120,16 @@
     
         </div>
 
-        <input type="submit" value="proceed to checkout" class="submit-btn">
+        <input id="checkout" type="submit" value="payment" class="submit-btn">
 
     </form>
 
 </div>  
 
 <br>
-<footer class="bg-primary text-white py-3">
+<!-- <footer class="bg-primary text-white py-3" style="height: 200px;">
     <div class="container">
-      <div class="row">
+      <div class="row" style="display: 100px;">
         <div class="col-md-4">
           <p class="mb-0">Copyright © Nazmus Skaib Apurba</p>
         </div>
@@ -141,7 +141,18 @@
         </div>
       </div>
     </div>
-  </footer>
+  </footer> -->
+
+  <script>
+
+    document.getElementById('checkout').addEventListener('click', function (){
+
+        alert("The payment is successful!!")
+
+
+    })
+
+  </script>
     
 </body>
 </html>

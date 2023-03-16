@@ -11,7 +11,9 @@ function addToCart(type, cake, price) {
 function displayCart() {
   let cartItems = "";
   let total = 0;
+  
   for (let i = 0; i < cart.length; i++) {
+    if(i<=10){
     let item = cart[i];
     let { type, cake, size, design, price } = item;
     let designName = design ? design.name : "N/A";
@@ -29,6 +31,10 @@ function displayCart() {
         </td>
       </tr>
     `;
+    }
+    else{
+      alert("You can not order more than 10")
+    }
   }
   document.getElementById("cart-items").innerHTML = cartItems;
   document.getElementById("total-price").value = total;

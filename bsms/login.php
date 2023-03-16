@@ -24,7 +24,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
             height:100%;
         }
         body{
-            background-image:url('./images/wallpaper.jfif') !important;
+            background-image:url('https://images.unsplash.com/photo-1587241321921-91a834d6d191?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGJha2VyeXxlbnwwfHwwfHw%3D&w=1000&q=80') !important;
             background-size:cover;
             background-repeat:no-repeat;
             background-position:center center;
@@ -43,11 +43,12 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 <body class="">
    <div class="h-100 d-flex jsutify-content-center align-items-center">
        <div class='w-100'>
-        <h1 class="py-5 text-center text-light px-4" id="sys_title">Bakery Shop Management System</h1>
+        <h2 class="py-5 text-center text-light px-4" id="sys_title">Cake Shop Management System</h2>
+        <h3 class="py-5 text-center text-black px-4" id="sys_title">Prepared By: Apurba and Ayesha</h3>
         <div class="card my-3 col-md-4 offset-md-4">
             <div class="card-body">
                 <form action="" id="login-form">
-                    <center><small>Please enter your credentials.</small></center>
+                    <center><small>Please Enter Username and Password</small></center>
                     <div class="form-group">
                         <label for="username" class="control-label">Username</label>
                         <input type="text" id="username" autofocus name="username" class="form-control form-control-sm rounded-0" required>

@@ -48,6 +48,11 @@
   .cake-item img {
     width: 100%;
   }
-.carousel-inner{
+/* .carousel-inner{
     height: 400px;
+} */
+
+#cakeCarousel{
+    margin-left: 239px;
+    margin-right: 249px;
 }

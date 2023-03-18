@@ -27,7 +27,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-  <script src="./cart.js"></script>
+
   <link rel="stylesheet" type="text/css" href="./cart.css">
 </head>
 
@@ -63,81 +63,56 @@
   <div class="container">
 
     <h1 class="text-center">Cake Cart</h1>
-    <div class="row">
-      <div class="col-md-3">
-        <h2>Wedding Cakes</h2>
-        <select class="form-control" id="wedding-cakes"
-          onchange="addToCart('wedding', this.value, this.options[this.selectedIndex].dataset.price)">
-          <option value="">Select a Cake</option>
-          <option value="Vanilla" data-price="30">Vanilla</option>
-          <option value="Chocolate" data-price="35">Chocolate</option>
-          <option value="Strawberry" data-price="40">Strawberry</option>
-          <option value="Lemon" data-price="25">Lemon</option>
-          <option value="Red Velvet" data-price="45">Red Velvet</option>
-        </select>
+    <form action="cartPost.php" method="post">
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Occasion</h2>
+          <!-- Ocasion select -->
+          <select class="form-control" id="wedding-cakes" name="cakeOcasion">
+            <option value="">Select a Cake</option>
+            <option value="Weeding" data-price="30">Weeding</option>
+            <option value="Birthday" data-price="35">Birthday</option>
+            <option value="Eid Day" data-price="40">Eid Day</option>
+            <option value="Special" data-price="25">Special</option>
+          </select>
+        </div>
         <br>
-        <h2>Birthday Cakes</h2>
-        <select class="form-control" id="birthday-cakes"
-          onchange="addToCart('birthday', this.value, this.options[this.selectedIndex].dataset.price)">
-          <option value="">Select a Cake</option>
-          <option value="Vanilla" data-price="20">Vanilla</option>
-          <option value="Chocolate" data-price="25">Chocolate</option>
-          <option value="Strawberry" data-price="30">Strawberry</option>
-          <option value="Lemon" data-price="15">Lemon</option>
-          <option value="Red Velvet" data-price="35">Red Velvet</option>
-        </select>
+        <div class="col-md-4">
+          <h2>Cake Flavours</h2>
+          <!-- Flavour Box -->
+          <select class="form-control" id="birthday-cakes" name="cakeFlavour">
+            <option value="">Select a Cake</option>
+            <option value="Vanilla" data-price="20">Vanilla</option>
+            <option value="Chocolate" data-price="25">Chocolate</option>
+            <option value="Strawberry" data-price="30">Strawberry</option>
+            <option value="Lemon" data-price="15">Lemon</option>
+            <option value="Red Velvet" data-price="35">Red Velvet</option>
+          </select>
+        </div>
         <br>
-        <h2>Special Occasion Cakes</h2>
-        <select class="form-control" id="occasion-cakes"
-          onchange="addToCart('occasion', this.value, this.options[this.selectedIndex].dataset.price)">
-          <option value="">Select a Cake</option>
-          <option value="Vanilla" data-price="40">Vanilla</option>
-          <option value="Chocolate" data-price="45">Chocolate</option>
-          <option value="Strawberry" data-price="50">Strawberry</option>
-          <option value="Lemon" data-price="35">Lemon</option>
-          <option value="Red Velvet" data-price="55">Red Velvet</option>
-        </select>
-        <br>
-      </div>
-      <div class="col-md-9">
-        <h2>Cart</h2>
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Type</th>
-              <th>Cake</th>
-              <th>Size (lb)</th>
-              <th>Design</th>
-              <th>Price</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody id="cart-items">
-          </tbody>
-        </table>
-        <form onsubmit="submitOrder(event)">
-          <h2>Order Summary</h2>
-          <div class="form-group">
-            <label for="size">Size (lb):</label>
-            <input type="number" class="form-control" id="size" min="1" value="1">
-          </div>
-          <div class="form-group">
-            <label for="design">Upload Design:</label>
-            <input type="file" class="form-control-file" id="design">
-          </div>
-          <div class="form-group">
-            <label for="total-price">Total Price:</label>
-            <input type="text" class="form-control" id="total-price" readonly>
-          </div>
-          <button type="submit" class="btn btn-primary"><a style="color: azure;"
-              href="./payment gateway/payment.html">Checkout:Bangladesh</a></button><br><br>
-          <button type="submit" class="btn btn-primary"><a style="color:azure"
-              href="./payment gateway/checkout.html">Checkout:International</a></button>
+        <div class="col-md-4">
 
-        </form>
+          <!-- Input Size -->
+          <div class="d-flex">
+            <div>
+              <h2>Size</h2>
+              <input type="number" name="size" class="form-control" min="1" placeholder=" 1 lbs" id="exampleInputEmail1"
+                aria-describedby="emailHelp" required>
+            </div>
+            <div>
+              <h2>Quantity</h2>
+              <input type="number" name="quantity" class="form-control" min="1" placeholder="Quantity"
+                id="exampleInputEmail1" aria-describedby="emailHelp" required>
+            </div>
+          </div>
+        </div>
+        <br>
       </div>
-    </div>
-  </div>
+      <div style="text-align: center; margin-top:5%;">
+        <button type="submit" class="btn btn-secondary">CheckOut</button>
+      </div>
+    </form>
+
 
 </body>
 

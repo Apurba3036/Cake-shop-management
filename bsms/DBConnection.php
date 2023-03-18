@@ -7,6 +7,9 @@ Class DBConnection{
         if(!$this->db){
             die('Database Connection Failes. Error: '.$this->db->error);
         }
+        else{
+            // echo'successful';
+        }
 
     }
     function db_connect(){

@@ -53,7 +53,7 @@
                                         <span class="fas fa-shopping-bag fs-3 text-secondary"></span>
                                     </div>
                                     <div class="col-auto flex-grow-1">
-                                        <div class="fs-5"><b><a style="text-decoration:none;" href="http://127.0.0.1:5502/index.html">Shop</a>
+                                        <div class="fs-5"><b><a style="text-decoration:none;" href="../index.html">Shop</a>
                                         </b></div>
                                         
                                     </div>

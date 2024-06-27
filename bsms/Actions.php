@@ -11,7 +11,7 @@ Class Actions extends DBConnection{
     }
     function login(){
         extract($_POST);
-        $sql = "SELECT * FROM user_list where username = '{$username}' and `password` = '".md5($password)."' ";
+        $sql = "SELECT * FROM user_list where username = '{$username}' and `password` = '{$password}' ";
         @$qry = $this->db->query($sql)->fetch_array();
         if(!$qry){
             $resp['status'] = "failed";

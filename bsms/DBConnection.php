@@ -1,38 +1,41 @@
 <?php
 
-Class DBConnection{
+class DBConnection {
     protected $db;
-    function __construct(){
-        $this->db= new mysqli('localhost','root','','bsms_db');
-        if(!$this->db){
-            die('Database Connection Failes. Error: '.$this->db->error);
-        }
-        else{
-            // echo'successful';
-        }
 
+    function __construct() {
+        $this->db = new mysqli('localhost', 'root', '', 'bsms_db');
+        if ($this->db->connect_error) {
+            die('Database Connection Failed. Error: ' . $this->db->connect_error);
+        }
+        // else {
+        //     echo 'successful';
+        // }
     }
-    function db_connect(){
+
+    function db_connect() {
         return $this->db;
     }
-    function __destruct(){
-         $this->db->close();
+
+    function __destruct() {
+        $this->db->close();
     }
 }
 
-function format_num($number = '',$decimal=''){
-    if(is_numeric($number)){
-        $ex = explode(".",$number);
+function format_num($number = '', $decimal = '') {
+    if (is_numeric($number)) {
+        $ex = explode(".", $number);
         $dec_len = isset($ex[1]) ? strlen($ex[1]) : 0;
-        if(!empty($decimal) || is_numeric($decimal)){
-            return number_format($number,$decimal);
-        }else{
-            return number_format($number,$dec_len);
+        if (!empty($decimal) || is_numeric($decimal)) {
+            return number_format($number, $decimal);
+        } else {
+            return number_format($number, $dec_len);
         }
-    }else{
+    } else {
         return 'Invalid input.';
     }
 }
 
 $db = new DBConnection();
 $conn = $db->db_connect();
+?>
